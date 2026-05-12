@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khushi Chetwani — Operations Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f9f8f5;--bg2:#fff;--bg3:#f2f1ed;--bg4:#eceae4;
+  --text:#111;--t2:#4a4a4a;--t3:#888;--t4:#bbb;
+  --border:#e4e1da;--border2:#ccc;
+  --black:#0d0d0d;--amber:#b86e00;--teal:#0a8a80;
+  --h:'Syne',sans-serif;--b:'DM Sans',sans-serif;--m:'DM Mono',monospace;
+  --r:8px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--b);font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.75rem}
+section{padding:2.8rem 0}
+.sec-label{font-family:var(--m);font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--t3);margin-bottom:1rem}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{border-bottom:1px solid var(--border);background:rgba(249,248,245,.94);backdrop-filter:blur(10px);position:sticky;top:0;z-index:90}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;height:50px;max-width:1040px;margin:0 auto;padding:0 1.75rem}
+.nav-name{font-family:var(--h);font-size:.86rem;font-weight:600}
+.nav-sub{font-family:var(--m);font-size:.58rem;color:var(--t3);margin-left:.6rem;letter-spacing:.04em}
+.nav-right{display:flex;align-items:center;gap:1.4rem}
+.nav-links{display:flex;gap:1.4rem}
+.nav-links a{font-size:.76rem;color:var(--t2);font-family:var(--m)}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{font-size:.73rem;padding:.28rem .8rem;border:1px solid var(--border2);border-radius:5px;color:var(--text)}
+.nav-cta:hover{background:var(--text);color:#fff}
+
+/* HERO */
+.hero{padding:3.2rem 0 2.2rem}
+.hero-inner{display:grid;grid-template-columns:1fr 320px;gap:3.5rem;align-items:center}
+.hero-eyebrow{font-family:var(--m);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:.7rem}
+.hero h1{font-family:var(--h);font-size:1.95rem;font-weight:700;line-height:1.2;margin-bottom:1rem;letter-spacing:-.01em}
+.hero h1 span{color:var(--t3)}
+.hero-desc{font-size:.88rem;color:var(--t2);line-height:1.78;max-width:440px;margin-bottom:.6rem}
+.hero-desc + .hero-desc{margin-top:.45rem;margin-bottom:1.2rem}
+.hero-btns{display:flex;gap:.45rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.3rem;padding:.32rem .8rem;border:1px solid var(--border2);border-radius:5px;font-size:.74rem;color:var(--text);font-family:var(--b);transition:all .14s;cursor:pointer;background:var(--bg2)}
+.btn:hover{background:var(--text);color:#fff;border-color:var(--text)}
+.btn.primary{background:var(--text);color:#fff;border-color:var(--text)}
+.btn.primary:hover{background:#2a2a2a}
+
+/* HERO DASH */
+.hero-dash{background:var(--black);border-radius:10px;overflow:hidden;border:1px solid #1e1e1e}
+.hd-bar{background:#141414;padding:.5rem .85rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e1e1e}
+.hd-title{font-family:var(--m);font-size:.58rem;color:rgba(255,255,255,.28);letter-spacing:.08em;text-transform:uppercase}
+.hd-status{display:flex;align-items:center;gap:.35rem;font-family:var(--m);font-size:.56rem;color:rgba(255,255,255,.28)}
+.hd-dot{width:5px;height:5px;border-radius:50%;background:#22c55e}
+.hd-kpis{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #1a1a1a}
+.hd-kpi{padding:.55rem .75rem;border-right:1px solid #1a1a1a}
+.hd-kpi:last-child{border-right:none}
+.hd-kv{font-family:var(--m);font-size:.98rem;color:#f0f0f0;display:block;line-height:1.1}
+.hd-kv.a{color:#f59e0b}.hd-kv.t{color:#2dd4bf}
+.hd-kl{font-size:.56rem;color:rgba(255,255,255,.25);font-family:var(--m);margin-top:.12rem;display:block}
+.hd-chart{padding:.65rem .75rem .8rem}
+
+/* METRICS STRIP */
+.metrics{background:var(--black);border-radius:var(--r);display:flex;overflow:hidden;border:1px solid #181818}
+.met{flex:1;padding:1.1rem 1.2rem;border-right:1px solid #1c1c1c}
+.met:last-child{border-right:none}
+.met-val{font-family:var(--h);font-size:1.45rem;font-weight:700;color:#fff;display:block;line-height:1}
+.met-val.a{color:#f59e0b}.met-val.t{color:#2dd4bf}
+.met-label{font-family:var(--m);font-size:.58rem;color:rgba(255,255,255,.28);margin-top:.22rem;letter-spacing:.03em;display:block}
+.met-ctx{font-size:.63rem;color:rgba(255,255,255,.16);margin-top:.06rem;font-family:var(--m);display:block}
+
+/* CASE STUDY GRID */
+.cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.cs-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:transform .12s,border-color .12s,box-shadow .12s;position:relative}
+.cs-card:hover{transform:translateY(-2px);border-color:#bbb;box-shadow:0 5px 20px rgba(0,0,0,.06)}
+.cs-cover{height:88px;position:relative;overflow:hidden}
+.cs-cover-label{position:absolute;bottom:7px;left:9px;font-family:var(--m);font-size:.56rem;color:rgba(255,255,255,.4);letter-spacing:.07em;text-transform:uppercase}
+.cs-metric-pill{position:absolute;top:7px;right:7px;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.1);padding:.18rem .48rem;border-radius:100px;font-family:var(--m);font-size:.58rem;color:#fff}
+.cs-body{padding:.8rem .9rem .95rem}
+.cs-co{font-family:var(--m);font-size:.56rem;color:var(--t3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.2rem}
+.cs-title{font-family:var(--h);font-size:.82rem;font-weight:600;line-height:1.3;margin-bottom:.35rem}
+.cs-summary{font-size:.74rem;color:var(--t2);line-height:1.62;margin-bottom:.5rem}
+.cs-tag-row{display:flex;gap:.25rem;flex-wrap:wrap}
+.cs-tag{font-size:.58rem;padding:.12rem .42rem;border:1px solid var(--border);border-radius:3px;color:var(--t3)}
+.cs-arrow{position:absolute;bottom:.8rem;right:.9rem;font-size:.8rem;color:var(--t4)}
+
+/* SKILLS */
+.sys-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.5rem}
+.sys-card{border:1px solid var(--border);border-radius:6px;overflow:hidden;background:var(--bg2);transition:transform .12s,border-color .12s}
+.sys-card:hover{transform:translateY(-2px);border-color:var(--border2)}
+.sys-icon{background:var(--black);aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.sys-label{padding:.38rem .5rem;font-size:.67rem;font-weight:500;color:var(--t2)}
+
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column}
+.tl-row{display:grid;grid-template-columns:100px 1px 1fr;gap:0 1.4rem}
+.tl-date{font-family:var(--m);font-size:.64rem;color:var(--t3);padding:.65rem 0;text-align:right;line-height:1.45}
+.tl-line{display:flex;flex-direction:column;align-items:center}
+.tl-dot{width:7px;height:7px;border-radius:50%;background:var(--border2);margin-top:.78rem;flex-shrink:0}
+.tl-dot.on{background:var(--text)}
+.tl-connector{flex:1;width:1px;background:var(--border)}
+.tl-content{padding:.5rem 0 1.3rem}
+.tl-co{font-family:var(--h);font-size:.84rem;font-weight:600}
+.tl-role{font-size:.75rem;color:var(--t2);margin-top:.08rem}
+.tl-pills{display:flex;gap:.25rem;margin-top:.42rem;flex-wrap:wrap}
+.tl-pill{font-size:.58rem;padding:.12rem .4rem;border:1px solid var(--border);border-radius:3px;color:var(--t3)}
+.tl-award{font-size:.62rem;color:var(--amber);margin-top:.3rem;font-family:var(--m)}
+
+/* BEYOND */
+.bw-wrap{background:var(--bg3);border-radius:var(--r);padding:1.6rem 1.8rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.bw-stat-row{display:flex;gap:.55rem;margin-top:.85rem;flex-wrap:wrap}
+.bw-stat{background:var(--bg2);border:1px solid var(--border);border-radius:5px;padding:.5rem .7rem}
+.bw-stat strong{display:block;font-family:var(--h);font-size:.82rem}
+.bw-stat span{font-size:.62rem;color:var(--t3)}
+
+/* CONTACT */
+.contact-wrap{background:var(--text);border-radius:var(--r);padding:2rem 2.2rem;display:flex;justify-content:space-between;align-items:center;gap:2rem}
+.contact-left h3{font-family:var(--h);font-size:1.05rem;color:#fff;font-weight:600;margin-bottom:.28rem}
+.contact-left p{font-size:.77rem;color:rgba(255,255,255,.4)}
+.contact-links{display:flex;gap:.45rem;flex-wrap:wrap;flex-shrink:0}
+.clink{font-size:.72rem;padding:.3rem .78rem;border:1px solid rgba(255,255,255,.18);border-radius:5px;color:rgba(255,255,255,.85);font-family:var(--m)}
+.clink:hover{background:rgba(255,255,255,.08)}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;backdrop-filter:blur(4px);padding:2rem 1rem;overflow-y:auto}
+.modal-overlay.open{display:block}
+.modal{background:var(--bg);border-radius:10px;width:100%;max-width:800px;margin:0 auto;overflow:hidden;position:relative}
+.modal-close{position:absolute;top:.9rem;right:.9rem;background:rgba(0,0,0,.08);border:none;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;z-index:5;color:var(--text)}
+.modal-close:hover{background:rgba(0,0,0,.15)}
+.modal-cover{height:160px;position:relative;overflow:hidden}
+.modal-cover-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem 1.5rem;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 60%)}
+.modal-co{font-family:var(--m);font-size:.6rem;color:rgba(255,255,255,.45);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.modal-title{font-family:var(--h);font-size:1.25rem;font-weight:700;color:#fff;line-height:1.2}
+.modal-body{padding:1.5rem 1.6rem 2rem}
+.modal-kpis{display:flex;gap:.45rem;margin-bottom:1.6rem;flex-wrap:wrap}
+.mk{background:var(--bg3);border-radius:6px;padding:.58rem .8rem;flex:1;min-width:105px}
+.mk strong{display:block;font-family:var(--h);font-size:1rem;line-height:1.1}
+.mk strong.a{color:var(--amber)}.mk strong.t{color:var(--teal)}
+.mk span{font-size:.63rem;color:var(--t3);margin-top:.1rem;display:block}
+.modal-sections{display:flex;flex-direction:column;gap:1.3rem}
+.ms{padding-left:1rem;border-left:2px solid var(--border)}
+.ms-label{font-family:var(--m);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:.28rem}
+.ms h4{font-family:var(--h);font-size:.84rem;font-weight:600;margin-bottom:.32rem;line-height:1.3}
+.ms p{font-size:.79rem;color:var(--t2);line-height:1.74}
+.ms p + p{margin-top:.4rem}
+.ms-note{margin-top:.55rem;background:var(--bg3);border-radius:5px;padding:.55rem .75rem;font-size:.74rem;color:var(--t2);line-height:1.65;border-left:2px solid var(--border2)}
+.ms-note strong{color:var(--text)}
+.modal-dash{background:var(--black);border-radius:7px;overflow:hidden;margin-top:1.5rem}
+.md-bar{background:#111;padding:.42rem .9rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1d1d1d}
+.md-title{font-family:var(--m);font-size:.56rem;color:rgba(255,255,255,.28);letter-spacing:.08em;text-transform:uppercase}
+.md-note{font-family:var(--m);font-size:.54rem;color:rgba(255,255,255,.2)}
+.md-kpis{display:flex;border-bottom:1px solid #1a1a1a}
+.md-kpi{flex:1;padding:.48rem .85rem;border-right:1px solid #1a1a1a}
+.md-kpi:last-child{border-right:none}
+.md-kv{font-family:var(--m);font-size:.95rem;color:#f0f0f0;display:block}
+.md-kv.a{color:#f59e0b}.md-kv.t{color:#2dd4bf}
+.md-kl{font-size:.54rem;color:rgba(255,255,255,.22);font-family:var(--m)}
+.md-chart{padding:.75rem .9rem 1rem}
+
+footer{border-top:1px solid var(--border);padding:1.1rem 0;margin-top:.5rem}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;font-size:.68rem;color:var(--t3)}
+
+@media(max-width:760px){
+  .hero-inner,.cs-grid,.bw-wrap,.contact-wrap{grid-template-columns:1fr}
+  .sys-grid{grid-template-columns:repeat(3,1fr)}
+  .metrics{flex-wrap:wrap}.met{min-width:48%}
+  .hero-dash{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div style="display:flex;align-items:baseline;gap:.3rem">
+      <span class="nav-name">Khushi Chetwani</span>
+      <span class="nav-sub">Business Operations</span>
+    </div>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+      </div>
+      <a href="mailto:khushi.chetwani1999@gmail.com" class="nav-cta">Get in touch</a>
+      <a href="Khushi_Chetwani_Resume.pdf" download class="nav-cta">↓ Resume</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Business Operations · Systems & Analytics · Founder's Office</div>
+      <h1>I fix how teams<br>actually operate.<span> Not just how<br>they report it.</span></h1>
+      <p class="hero-desc">5 years inside operations at fintech and SaaS companies. I take messy, manual, gut-feel processes and build systems that make them reliable, visible, and scalable.</p>
+      <p class="hero-desc">My work sits at the intersection of data, process design, and execution. I've rebuilt forecasting models, redesigned collections workflows, built cost-reduction frameworks, and shipped AI tooling that replaced hours of daily work. Everything on this page was built and operationalized by me.</p>
+      <div class="hero-btns">
+        <a href="#work" class="btn primary">View case studies</a>
+        <a href="https://linkedin.com/in/chetwani" target="_blank" class="btn">LinkedIn ↗</a>
+        <a href="mailto:khushi.chetwani1999@gmail.com" class="btn">khushi.chetwani1999@gmail.com</a>
+      </div>
+    </div>
+    <div class="hero-dash">
+      <div class="hd-bar">
+        <span class="hd-title">Ops snapshot</span>
+        <span class="hd-status"><span class="hd-dot"></span>Live figures</span>
+      </div>
+      <div class="hd-kpis">
+        <div class="hd-kpi"><span class="hd-kv a">58%</span><span class="hd-kl">ACH adoption</span></div>
+        <div class="hd-kpi"><span class="hd-kv t">96%</span><span class="hd-kl">Fcst accuracy</span></div>
+        <div class="hd-kpi"><span class="hd-kv">87%</span><span class="hd-kl">Utilisation</span></div>
+      </div>
+      <div class="hd-chart">
+        <svg viewBox="0 0 300 96" width="100%" fill="none">
+          <defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2dd4bf" stop-opacity=".35"/><stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/></linearGradient></defs>
+          <line x1="0" y1="72" x2="300" y2="72" stroke="rgba(255,255,255,.05)"/>
+          <line x1="0" y1="46" x2="300" y2="46" stroke="rgba(255,255,255,.04)" stroke-dasharray="3,4"/>
+          <line x1="0" y1="20" x2="300" y2="20" stroke="rgba(255,255,255,.04)" stroke-dasharray="3,4"/>
+          <path d="M0,66 C35,63 70,58 105,52 C140,46 175,38 210,30 L270,22 L300,18 L300,96 L0,96Z" fill="url(#hg)"/>
+          <polyline points="0,66 40,62 80,56 120,50 160,42 200,32 250,22 300,18" stroke="#2dd4bf" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+          <polyline points="0,78 40,75 80,72 120,68 160,65 200,62 250,57 300,54" stroke="#f59e0b" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-dasharray="4,3" opacity=".6"/>
+          <text x="2" y="92" fill="rgba(255,255,255,.16)" font-size="6.5" font-family="monospace">Aug</text>
+          <text x="72" y="92" fill="rgba(255,255,255,.16)" font-size="6.5" font-family="monospace">Oct</text>
+          <text x="145" y="92" fill="rgba(255,255,255,.16)" font-size="6.5" font-family="monospace">Dec</text>
+          <text x="220" y="92" fill="rgba(255,255,255,.16)" font-size="6.5" font-family="monospace">Feb</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section style="padding-top:0;padding-bottom:2.5rem">
+  <div class="metrics">
+    <div class="met"><span class="met-val a">$500K+</span><span class="met-label">Annualised savings identified</span><span class="met-ctx">Vendor audit framework · MPOWER · 2025</span></div>
+    <div class="met"><span class="met-val t">48→58%</span><span class="met-label">ACH adoption over 7 months</span><span class="met-ctx">Collections redesign · MPOWER · 2025</span></div>
+    <div class="met"><span class="met-val">+11.2%</span><span class="met-label">Forecast accuracy improvement</span><span class="met-ctx">Pipeline rebuild · Cleo · 2023</span></div>
+    <div class="met"><span class="met-val a">+19.3%</span><span class="met-label">Campaign ROI improvement</span><span class="met-ctx">Attribution model · YOptima · 2022</span></div>
+    <div class="met"><span class="met-val t">+26.8%</span><span class="met-label">Revenue in 3 months</span><span class="met-ctx">Product-mix redesign · Decathlon · 2020</span></div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="work" style="padding-top:0">
+  <div class="sec-label">Case Studies</div>
+  <div class="cs-grid">
+
+    <div class="cs-card" onclick="openModal('ai_capacity')">
+      <div class="cs-cover" style="background:linear-gradient(140deg,#0e0e0e,#191919,#0a0a0a)">
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 340 88" fill="none">
+          <rect x="14" y="22" width="130" height="52" rx="4" stroke="rgba(255,255,255,.06)" stroke-width="1" fill="none"/>
+          <text x="28" y="46" fill="rgba(255,255,255,.12)" font-size="11" font-family="monospace" font-weight="600">STAFFING</text>
+          <text x="28" y="62" fill="rgba(255,255,255,.07)" font-size="8" font-family="monospace">CAPACITY TOOL</text>
+          <line x1="148" y1="48" x2="174" y2="48" stroke="rgba(255,255,255,.1)" stroke-width="1.5" stroke-linecap="round"/>
+          <polygon points="174,44 182,48 174,52" fill="rgba(255,255,255,.1)"/>
+          <rect x="186" y="22" width="130" height="52" rx="4" stroke="rgba(255,255,255,.06)" stroke-width="1" fill="none"/>
+          <text x="200" y="46" fill="rgba(255,255,255,.12)" font-size="11" font-family="monospace" font-weight="600">HEADCOUNT</text>
+          <text x="200" y="62" fill="rgba(255,255,255,.07)" font-size="8" font-family="monospace">RECOMMENDATION</text>
+        </svg>
+        <div class="cs-cover-label">AI Tooling</div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-co">MPOWER Financing · 2026</div>
+        <div class="cs-title">AI Capacity Planning Tool</div>
+        <div class="cs-summary">Built a Claude-powered staffing tool trained on 3 years of operational data. Replaced a 45-minute daily manual process. Team leads query it directly for headcount recommendations.</div>
+        <div class="cs-tag-row"><span class="cs-tag">Claude API</span><span class="cs-tag">Workflow Design</span><span class="cs-tag">Ops Tooling</span></div>
+      </div>
+      <span class="cs-arrow">↗</span>
+    </div>
+
+    <div class="cs-card" onclick="openModal('mpower')">
+      <div class="cs-cover" style="background:linear-gradient(140deg,#0a1e38,#0d4a6b,#0a7a8a)">
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 340 88" fill="none">
+          <g opacity=".18"><rect x="14" y="52" width="24" height="32" fill="white"/><rect x="44" y="38" width="24" height="46" fill="white"/><rect x="74" y="24" width="24" height="60" fill="white"/><rect x="104" y="16" width="24" height="68" fill="white"/><rect x="134" y="32" width="24" height="52" fill="white"/></g>
+          <defs><linearGradient id="mp" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2dd4bf" stop-opacity=".45"/><stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/></linearGradient></defs>
+          <path d="M185,76 C210,66 240,52 270,42 C295,34 315,26 338,20 L338,88 L185,88Z" fill="url(#mp)"/>
+          <polyline points="185,76 215,64 248,50 278,40 310,30 338,20" stroke="#2dd4bf" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <text x="186" y="16" fill="rgba(255,255,255,.3)" font-size="6.5" font-family="monospace">48% to 58% ACH over 7 months</text>
+        </svg>
+        <div class="cs-cover-label">Collections Operations</div>
+        <div class="cs-metric-pill">+10 pts ACH</div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-co">MPOWER Financing · 2026</div>
+        <div class="cs-title">Collections Prioritisation & Repayment Redesign</div>
+        <div class="cs-summary">Rebuilt how the collections team worked through delinquent accounts. Replaced a static, equal-effort queue with a risk-scored model. ACH adoption went from 48% to 58% over 7 months.</div>
+        <div class="cs-tag-row"><span class="cs-tag">SQL</span><span class="cs-tag">Tableau</span><span class="cs-tag">Risk Scoring</span><span class="cs-tag">Process Design</span></div>
+      </div>
+      <span class="cs-arrow">↗</span>
+    </div>
+
+    <div class="cs-card" onclick="openModal('cleo')">
+      <div class="cs-cover" style="background:linear-gradient(140deg,#14103a,#251860,#1a2880)">
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 340 88" fill="none">
+          <defs><linearGradient id="cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".35"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></linearGradient></defs>
+          <path d="M10,78 C60,70 110,60 160,48 C210,36 260,26 330,16 L338,14 L338,88 L10,88Z" fill="url(#cl)"/>
+          <polyline points="10,78 60,70 110,58 160,48 210,36 260,26 330,16" stroke="#f59e0b" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-dasharray="5,4" opacity=".65"/>
+          <polyline points="10,82 60,74 110,64 160,54 210,42 260,32 330,22" stroke="rgba(255,255,255,.25)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <text x="12" y="16" fill="rgba(255,255,255,.3)" font-size="6.5" font-family="monospace">Fcst vs actual · $5.2M pipeline</text>
+        </svg>
+        <div class="cs-cover-label">Revenue Forecasting</div>
+        <div class="cs-metric-pill">+11.2% accuracy</div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-co">Cleo Software · 2022–24</div>
+        <div class="cs-title">Forecasting Rebuild & Resource Planning</div>
+        <div class="cs-summary">Rebuilt a $5M+ services pipeline forecasting framework that had hit an accuracy ceiling. Redesigned forecast categories, automated reporting in Salesforce, and removed 15+ hrs/wk of manual work.</div>
+        <div class="cs-tag-row"><span class="cs-tag">Salesforce</span><span class="cs-tag">Forecasting</span><span class="cs-tag">Variance Analysis</span></div>
+      </div>
+      <span class="cs-arrow">↗</span>
+    </div>
+
+    <div class="cs-card" onclick="openModal('yoptima')">
+      <div class="cs-cover" style="background:linear-gradient(140deg,#1a0a30,#380f52,#2a1048)">
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 340 88" fill="none">
+          <g opacity=".15"><circle cx="58" cy="44" r="26" stroke="white" stroke-width="1.5" fill="none"/><circle cx="134" cy="44" r="26" stroke="white" stroke-width="1.5" fill="none"/><circle cx="210" cy="44" r="26" stroke="white" stroke-width="1.5" fill="none"/></g>
+          <rect x="262" y="40" width="11" height="44" fill="rgba(255,255,255,.08)" rx="1"/>
+          <rect x="277" y="28" width="11" height="56" fill="rgba(255,255,255,.08)" rx="1"/>
+          <rect x="292" y="34" width="11" height="50" fill="#a78bfa" opacity=".45" rx="1"/>
+          <rect x="307" y="18" width="11" height="66" fill="#a78bfa" opacity=".65" rx="1"/>
+          <text x="12" y="16" fill="rgba(255,255,255,.3)" font-size="6.5" font-family="monospace">50+ campaigns · multi-touch model</text>
+        </svg>
+        <div class="cs-cover-label">Campaign Attribution</div>
+        <div class="cs-metric-pill">+19.3% ROI</div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-co">YOptima · 2022</div>
+        <div class="cs-title">Campaign Attribution & Spend Reallocation</div>
+        <div class="cs-summary">Built a multi-touch attribution model across 50+ active campaigns. Found the team was over-investing in high-visibility but low-converting channels. ROI improved 19.3% after spend reallocation.</div>
+        <div class="cs-tag-row"><span class="cs-tag">Attribution</span><span class="cs-tag">Analytics</span><span class="cs-tag">Spend Optimisation</span></div>
+      </div>
+      <span class="cs-arrow">↗</span>
+    </div>
+
+    <div class="cs-card" onclick="openModal('whj')">
+      <div class="cs-cover" style="background:linear-gradient(140deg,#0d2218,#0f3828,#0a4820)">
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 340 88" fill="none">
+          <circle cx="56" cy="52" r="28" stroke="rgba(255,255,255,.06)" stroke-width="10" fill="none"/>
+          <circle cx="56" cy="52" r="28" stroke="#4ade80" stroke-width="10" fill="none" stroke-dasharray="120 176" stroke-linecap="round" opacity=".35" transform="rotate(-90 56 52)"/>
+          <text x="48" y="56" fill="rgba(255,255,255,.45)" font-size="8.5" font-family="monospace" text-anchor="middle">+12.8%</text>
+          <text x="48" y="68" fill="rgba(255,255,255,.2)" font-size="5.5" font-family="monospace" text-anchor="middle">CSAT</text>
+          <polyline points="115,72 155,65 195,57 235,48 275,40 315,32" stroke="#4ade80" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".6"/>
+          <text x="115" y="16" fill="rgba(255,255,255,.3)" font-size="6.5" font-family="monospace">10,000+ interactions categorised</text>
+        </svg>
+        <div class="cs-cover-label">CX Intelligence</div>
+        <div class="cs-metric-pill">+12.8% CSAT</div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-co">WhiteHat Jr · 2021 · 🏆 Employee of Year</div>
+        <div class="cs-title">Interaction Analysis & CSAT Improvement</div>
+        <div class="cs-summary">Led a team of 5 to tag and analyse 10,000+ customer interactions. Built a driver taxonomy that surfaced the three categories responsible for most negative sentiment. CSAT improved 12.8% over 12 months.</div>
+        <div class="cs-tag-row"><span class="cs-tag">CSAT</span><span class="cs-tag">Sentiment Analysis</span><span class="cs-tag">Team Lead</span></div>
+      </div>
+      <span class="cs-arrow">↗</span>
+    </div>
+
+    <div class="cs-card" onclick="openModal('decathlon')">
+      <div class="cs-cover" style="background:linear-gradient(140deg,#2a0e06,#4a1a08,#3a2008)">
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 340 88" fill="none">
+          <g opacity=".15"><rect x="14" y="56" width="18" height="28" fill="white" rx="1"/><rect x="36" y="46" width="18" height="38" fill="white" rx="1"/><rect x="58" y="34" width="18" height="50" fill="white" rx="1"/><rect x="80" y="44" width="18" height="40" fill="white" rx="1"/></g>
+          <rect x="14" y="42" width="18" height="42" fill="#fb923c" opacity=".65" rx="1"/>
+          <rect x="36" y="30" width="18" height="54" fill="#fb923c" opacity=".65" rx="1"/>
+          <rect x="58" y="18" width="18" height="66" fill="#fb923c" opacity=".78" rx="1"/>
+          <rect x="80" y="28" width="18" height="56" fill="#fb923c" opacity=".65" rx="1"/>
+          <polyline points="115,70 165,58 215,46 265,36 325,26" stroke="#fb923c" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".55"/>
+          <text x="115" y="16" fill="rgba(255,255,255,.3)" font-size="6.5" font-family="monospace">+26.8% revenue · 3 months</text>
+        </svg>
+        <div class="cs-cover-label">Retail Operations</div>
+        <div class="cs-metric-pill">+26.8% revenue</div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-co">Decathlon Sports · 2020</div>
+        <div class="cs-title">Local Sports Project Optimisation</div>
+        <div class="cs-summary">Analysed regional purchase patterns to find product-mix mismatches across store areas. Recommended specific reallocations for 4 area categories. Revenue increased 26.8% within 3 months.</div>
+        <div class="cs-tag-row"><span class="cs-tag">Demand Analysis</span><span class="cs-tag">Segmentation</span><span class="cs-tag">Retail Ops</span></div>
+      </div>
+      <span class="cs-arrow">↗</span>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-label">Skills</div>
+  <div class="sys-grid">
+    <div class="sys-card"><div class="sys-icon"><svg viewBox="0 0 44 44" width="44" fill="none"><path d="M10 22 L18 14 L26 20 L34 12" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><circle cx="34" cy="12" r="3" fill="white" opacity=".7"/><line x1="8" y1="32" x2="36" y2="32" stroke="white" stroke-width="1" opacity=".18"/></svg></div><div class="sys-label">Strategic Thinking</div></div>
+    <div class="sys-card"><div class="sys-icon"><svg viewBox="0 0 44 44" width="44" fill="none"><rect x="6" y="6" width="14" height="14" rx="2" stroke="white" stroke-width="1.8" fill="none" opacity=".9"/><rect x="24" y="6" width="14" height="14" rx="2" stroke="white" stroke-width="1.8" fill="none" opacity=".7"/><rect x="6" y="24" width="14" height="14" rx="2" stroke="white" stroke-width="1.8" fill="none" opacity=".5"/><rect x="24" y="24" width="14" height="14" rx="2" stroke="white" stroke-width="1.8" fill="none" opacity=".35"/><line x1="13" y1="20" x2="13" y2="24" stroke="white" stroke-width="1.2" opacity=".3"/><line x1="31" y1="20" x2="31" y2="24" stroke="white" stroke-width="1.2" opacity=".3"/><line x1="20" y1="13" x2="24" y2="13" stroke="white" stroke-width="1.2" opacity=".3"/></svg></div><div class="sys-label">Operational Systems</div></div>
+    <div class="sys-card"><div class="sys-icon"><svg viewBox="0 0 44 44" width="44" fill="none"><rect x="6" y="26" width="7" height="14" rx="1" fill="white" opacity=".9"/><rect x="16" y="18" width="7" height="22" rx="1" fill="white" opacity=".7"/><rect x="26" y="10" width="7" height="30" rx="1" fill="white" opacity=".5"/><rect x="36" y="20" width="7" height="20" rx="1" fill="white" opacity=".35"/></svg></div><div class="sys-label">Analytics</div></div>
+    <div class="sys-card"><div class="sys-icon"><svg viewBox="0 0 44 44" width="44" fill="none"><rect x="8" y="14" width="28" height="18" rx="2" stroke="white" stroke-width="1.8" fill="none" opacity=".8"/><polyline points="14,22 19,18 24,22 30,16" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".7"/><line x1="22" y1="32" x2="22" y2="36" stroke="white" stroke-width="1.5" opacity=".4"/><line x1="14" y1="36" x2="30" y2="36" stroke="white" stroke-width="1.5" opacity=".4"/></svg></div><div class="sys-label">Automation</div></div>
+    <div class="sys-card"><div class="sys-icon"><svg viewBox="0 0 44 44" width="44" fill="none"><path d="M10 28 Q22 12 34 28" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" opacity=".9"/><circle cx="10" cy="28" r="2.5" fill="white" opacity=".6"/><circle cx="34" cy="28" r="2.5" fill="white" opacity=".6"/><line x1="14" y1="33" x2="30" y2="33" stroke="white" stroke-width="1.5" opacity=".28"/></svg></div><div class="sys-label">Communication</div></div>
+    <div class="sys-card"><div class="sys-icon"><svg viewBox="0 0 44 44" width="44" fill="none"><circle cx="22" cy="22" r="12" stroke="white" stroke-width="1.8" fill="none" opacity=".45"/><polyline points="16,22 20,26 28,18" stroke="white" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/></svg></div><div class="sys-label">Execution</div></div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="experience">
+  <div class="sec-label">Experience</div>
+  <div class="timeline">
+    <div class="tl-row">
+      <div class="tl-date">Aug 24<br>Apr 26</div>
+      <div class="tl-line"><div class="tl-dot on"></div><div class="tl-connector"></div></div>
+      <div class="tl-content">
+        <div class="tl-co">MPOWER Financing</div>
+        <div class="tl-role">Senior Operations Analyst · Bengaluru</div>
+        <div class="tl-pills"><span class="tl-pill">Cost Modelling</span><span class="tl-pill">AI Tooling</span><span class="tl-pill">Collections</span><span class="tl-pill">KPI Governance</span><span class="tl-pill">Capacity Planning</span><span class="tl-pill">Vendor Ops</span></div>
+        <div class="tl-award">🏆 Data Driven Value Award 2026</div>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-date">Apr 22<br>Aug 24</div>
+      <div class="tl-line"><div class="tl-dot on"></div><div class="tl-connector"></div></div>
+      <div class="tl-content">
+        <div class="tl-co">Cleo Software</div>
+        <div class="tl-role">Operations Analyst, promoted to Analyst II in 8 months</div>
+        <div class="tl-pills"><span class="tl-pill">Revenue Forecasting</span><span class="tl-pill">Salesforce</span><span class="tl-pill">Resource Planning</span><span class="tl-pill">Reporting</span></div>
+        <div class="tl-award">🏆 Data Literacy Award 2023</div>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-date">Nov 21<br>Mar 22</div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+      <div class="tl-content">
+        <div class="tl-co">YOptima</div>
+        <div class="tl-role">Growth Operations · Bengaluru</div>
+        <div class="tl-pills"><span class="tl-pill">Attribution Modelling</span><span class="tl-pill">Campaign Analytics</span><span class="tl-pill">Spend Optimisation</span></div>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-date">Nov 20<br>Nov 21</div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+      <div class="tl-content">
+        <div class="tl-co">WhiteHat Jr</div>
+        <div class="tl-role">Assistant Manager, User Insights · Mumbai</div>
+        <div class="tl-pills"><span class="tl-pill">CX Analytics</span><span class="tl-pill">CSAT</span><span class="tl-pill">Team Lead (5 FTE)</span></div>
+        <div class="tl-award">🏆 Employee of the Year 2021</div>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-date">Jul 18<br>Oct 20</div>
+      <div class="tl-line"><div class="tl-dot"></div><div style="flex:1"></div></div>
+      <div class="tl-content">
+        <div class="tl-co">Decathlon Sports India</div>
+        <div class="tl-role">Sports Leader, part-time · Noida</div>
+        <div class="tl-pills"><span class="tl-pill">Demand Analysis</span><span class="tl-pill">Product-Mix</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEYOND WORK -->
+<section style="padding-top:0">
+  <div class="sec-label">Beyond Work</div>
+  <div class="bw-wrap">
+    <div>
+      <div style="font-family:var(--h);font-size:.92rem;font-weight:600;margin-bottom:.5rem">Competitive football, for 7 years.</div>
+      <div style="font-size:.8rem;color:var(--t2);line-height:1.74">Represented at AIFF state level for 3 years. Currently playing for Pass FC in the Karnataka Women's A Division. The thing football actually teaches you isn't teamwork. It's how to read a situation that's moving fast, make a call with partial information, and adjust when the situation changes. That's most of what ops work is.</div>
+      <div class="bw-stat-row">
+        <div class="bw-stat"><strong>3 yrs</strong><span>AIFF State</span></div>
+        <div class="bw-stat"><strong>Pass FC</strong><span>KA Women's A Div</span></div>
+        <div class="bw-stat"><strong>2024–25</strong><span>Active</span></div>
+      </div>
+    </div>
+    <div style="font-size:.8rem;color:var(--t2);line-height:1.76">
+      Reading queue pressure on a collections dashboard and reading defensive pressure on a pitch are structurally the same problem. You're parsing signals, prioritising who to engage, and making a call on partial information. The context changes. The thinking pattern doesn't.<br><br>
+      I've found that the habits that make a good midfielder — awareness of the full picture, not just what's in front of you — translate pretty directly into how I approach operational problems.
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section style="padding-top:0;padding-bottom:2.5rem">
+  <div class="contact-wrap">
+    <div class="contact-left">
+      <h3>Open to the right opportunity.</h3>
+      <p>Founder's Office, BizOps, or Operations Strategy roles in fintech, SaaS, or early-stage companies.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:khushi.chetwani1999@gmail.com" class="clink">khushi.chetwani1999@gmail.com</a>
+      <a href="https://linkedin.com/in/chetwani" target="_blank" class="clink">LinkedIn ↗</a>
+      <a href="tel:+918851012540" class="clink">+91 88510 12540</a>
+      <a href="Khushi_Chetwani_Resume.pdf" download class="clink">↓ Resume</a>
+    </div>
+      <a href="Khushi_Chetwani_Resume.pdf" download class="clink">↓ Resume</a>
+    </div>
+  </div>
+</section>
+
+</div><!-- end .wrap -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <span>Khushi Chetwani · Bengaluru, India</span>
+      <span>Business Operations Portfolio</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script>
+const cases = {
+
+mpower: {
+  co: 'MPOWER Financing · Operations Analyst · Aug 2024 – Apr 2026',
+  title: 'Collections Prioritisation & Repayment Redesign',
+  bg: 'linear-gradient(140deg,#0a1e38,#0d4a6b,#0a7a8a)',
+  kpis: [
+    {val:'48% → 58%', lbl:'ACH adoption · 7 months', cls:'t'},
+    {val:'Signal-led', lbl:'Tier model built', cls:''},
+    {val:'78%', lbl:'Priority queue coverage', cls:''},
+    {val:'🏆', lbl:'Data Driven Value 2026', cls:'a'},
+  ],
+  sections: [
+    {
+      label: 'Context',
+      title: 'A collections team working the same way for every account',
+      body: `MPOWER's collections team handled loan repayments for international students. The queue was organised chronologically — agents worked through accounts in the order they came up, treating a borrower 2 days past due the same as one 90 days past due with no payment history. ACH adoption (direct debit repayment) had been sitting at 48% for several months with no clear explanation for why it had plateaued.`,
+      note: null
+    },
+    {
+      label: 'Problem',
+      title: 'No segmentation meant no prioritisation',
+      body: `The issue wasn't agent effort — the team was working hard. The issue was that effort was being distributed based on order, not likelihood of recovery. There was no way to tell, from the queue, which accounts had a high probability of converting to ACH repayment versus which ones needed a different intervention entirely. Every account looked the same.`
+    },
+    {
+      label: 'Constraint',
+      title: 'Fragmented data, no shared signal logic',
+      body: `The signals that would tell you about a borrower's repayment likelihood existed — delinquency aging, historical payment attempts, ACH setup status, contact responsiveness — but they were spread across different tables in Salesforce and internal loan systems, with no shared logic. The team had no dashboard showing this combined view. Building one required pulling and cleaning data across systems that weren't designed to talk to each other.`,
+      note: `The harder constraint was adoption. Any new prioritisation model required team leads to change how they assigned work every morning. That's a behaviour change, not just a system change.`
+    },
+    {
+      label: 'Approach',
+      title: 'Built a risk-scoring model to tier accounts by repayment probability',
+      body: `Pulled 14 months of collections data from Salesforce and the loan management system. Used SQL to build a scoring model that assigned each delinquent account a priority tier based on: delinquency band (days past due), number of prior payment attempts, ACH setup status, days since last contact, and historical response rate. Ran the model against past outcomes to validate that tier-1 accounts actually had higher ACH conversion before deploying it.`
+    },
+    {
+      label: 'Implementation',
+      title: 'Tableau dashboard refreshed daily, reviewed in morning standup',
+      body: `Built a Tableau dashboard that pulled from the scored dataset overnight and surfaced a prioritised account list each morning. Team leads used this during their 15-minute standup to assign work for the day. Tier-1 accounts (high conversion probability) were assigned first, with a target of 100% coverage before moving to Tier-2. The dashboard also tracked agent coverage by tier and daily ACH adoption rates, so performance feedback was immediate rather than weekly.`,
+      note: `Initial rollout took about 3 weeks. The first week was manual — I ran the scoring logic in SQL and shared CSVs with team leads so they could trial the prioritisation without depending on the dashboard being ready. That gave us a chance to catch model gaps early.`
+    },
+    {
+      label: 'Tradeoffs & What Changed',
+      title: 'First version over-indexed on delinquency depth',
+      body: `The initial scoring weighted delinquency band too heavily, which meant Tier-1 filled up with very late accounts — the ones hardest to convert. ACH conversion was actually higher in the 30-60 day band. We re-weighted after 6 weeks. The second issue was that Tier-3 accounts (low signal) were being underworked but still had meaningful volume. We added a minimum-contact rule for Tier-3 so they didn't disappear from the workflow entirely.`
+    },
+    {
+      label: 'Outcome',
+      title: 'ACH adoption rose from 48% to 58% over 7 months',
+      body: `ACH adoption increased from 48% to 58% over the 7 months following implementation. Priority Tier-1 account coverage reached 78%. The approach was recognised with the Data Driven Value Award 2026. The scoring model and dashboard became the standard operations workflow for the collections team.`
+    }
+  ],
+  dash: {
+    title: 'Collections Dashboard · MPOWER Financing',
+    kpis: [{val:'58%',lbl:'ACH Adoption',cls:'t'},{val:'+10 pts',lbl:'vs. 48% baseline',cls:'a'},{val:'78%',lbl:'Tier-1 Coverage',cls:''},{val:'7 mos',lbl:'Time to result',cls:''}],
+    svg: `<svg viewBox="0 0 680 160" width="100%" fill="none">
+      <defs><linearGradient id="d1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2dd4bf" stop-opacity=".28"/><stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/></linearGradient></defs>
+      <line x1="52" y1="16" x2="52" y2="132" stroke="rgba(255,255,255,.05)"/>
+      <line x1="52" y1="132" x2="672" y2="132" stroke="rgba(255,255,255,.05)"/>
+      <line x1="52" y1="96" x2="672" y2="96" stroke="rgba(255,255,255,.04)" stroke-dasharray="4,4"/>
+      <line x1="52" y1="60" x2="672" y2="60" stroke="rgba(255,255,255,.04)" stroke-dasharray="4,4"/>
+      <text x="46" y="136" fill="rgba(255,255,255,.18)" font-size="8.5" text-anchor="end" font-family="monospace">40%</text>
+      <text x="46" y="100" fill="rgba(255,255,255,.18)" font-size="8.5" text-anchor="end" font-family="monospace">50%</text>
+      <text x="46" y="64" fill="rgba(255,255,255,.18)" font-size="8.5" text-anchor="end" font-family="monospace">60%</text>
+      <path d="M66,116 L154,108 L242,100 L330,90 L418,78 L506,68 L654,56 L654,132 L66,132Z" fill="url(#d1)"/>
+      <polyline points="66,116 154,108 242,100 330,90 418,78 506,68 654,56" stroke="#2dd4bf" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <circle cx="66" cy="116" r="3" fill="#2dd4bf" opacity=".7"/>
+      <circle cx="654" cy="56" r="4" fill="#2dd4bf"/>
+      <text x="660" y="52" fill="#2dd4bf" font-size="9.5" font-family="monospace" font-weight="bold">58%</text>
+      <text x="66" y="112" fill="rgba(255,255,255,.35)" font-size="8.5" font-family="monospace">48%</text>
+      <line x1="330" y1="90" x2="330" y2="132" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="2,3"/>
+      <text x="330" y="148" fill="rgba(255,255,255,.18)" font-size="7.5" text-anchor="middle" font-family="monospace">Model v2</text>
+      <text x="66" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Aug</text>
+      <text x="154" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Sep</text>
+      <text x="242" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Oct</text>
+      <text x="418" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Dec</text>
+      <text x="506" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Jan</text>
+      <text x="654" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Mar</text>
+    </svg>`
+  }
+},
+
+cleo: {
+  co: 'Cleo Software · Operations Analyst to Analyst II · Apr 2022 – Aug 2024',
+  title: 'Forecasting Rebuild & Resource Planning',
+  bg: 'linear-gradient(140deg,#14103a,#251860,#1a2880)',
+  kpis: [
+    {val:'+11.2%', lbl:'Forecast accuracy', cls:'a'},
+    {val:'$5M+', lbl:'Pipeline managed', cls:'t'},
+    {val:'15+ hrs', lbl:'Manual effort removed/wk', cls:''},
+    {val:'8 months', lbl:'To promotion', cls:''},
+  ],
+  sections: [
+    {
+      label: 'Context',
+      title: 'A services pipeline that had outgrown its forecasting model',
+      body: `Cleo Software's services business had grown to a $5M+ annual pipeline across multiple delivery tracks. The forecasting process was built for a smaller operation — forecast categories hadn't been updated as delivery types changed, and the weekly reconciliation between forecast and actuals was a 3-hour manual process involving multiple spreadsheets pulled from Salesforce, project trackers, and finance systems.`
+    },
+    {
+      label: 'Problem',
+      title: 'Persistent forecast variance with no clear cause',
+      body: `Forecast accuracy had plateaued around 85%. The recurring problem wasn't bad estimates — it was that the same categories kept missing, in the same directions, quarter after quarter. Deal-type misclassifications were creating consistent over-forecast in one segment and under-forecast in another. Without variance root-cause tracking, this was invisible.`
+    },
+    {
+      label: 'Constraint',
+      title: 'Salesforce data quality and cross-team alignment',
+      body: `The biggest constraint was data quality in Salesforce. Deal stages weren't being updated consistently by account managers, which meant the pipeline view was perpetually stale. Any automated reporting only works if the underlying data is current. Getting buy-in from account managers to change their Salesforce hygiene habits was the hardest part of this project.`,
+      note: `There was also a constraint around resource planning — delivery headcount decisions were being made off the forecast, but the forecast wasn't broken down at a granularity that made resource allocation easy. That connection had to be built.`
+    },
+    {
+      label: 'Approach',
+      title: 'Variance analysis first, then redesign forecast categories',
+      body: `Ran a retrospective variance analysis across 6 quarters of forecast data. Categorised every miss by deal type, delivery stage, and account segment. Found that two deal types were consistently miscategorised at the pipeline entry stage — they were being forecast as one delivery model but executing as another, causing a systematic gap. Rebuilt the forecast taxonomy around actual delivery behaviour rather than the original deal-type structure.`
+    },
+    {
+      label: 'Implementation',
+      title: 'Salesforce automation for stage-gate tracking and weekly reporting',
+      body: `Built automated stage-gate tracking in Salesforce using workflow rules and scheduled reports. Set up a weekly Salesforce dashboard that pulled live pipeline data into a standardised format — no more spreadsheet reconciliation. Built automated variance alerts that fired when a deal moved stages in a way inconsistent with its forecast category. The weekly forecast review went from 3 hours of manual work to a 20-minute structured review using the dashboard.`,
+      note: `Account manager Salesforce adoption took about 6 weeks to stabilise. We introduced a simple stage-completion checklist in Salesforce and got a team lead to run a brief weekly hygiene review for the first month. Compliance improved from around 60% to 90%+ by week 8.`
+    },
+    {
+      label: 'Tradeoffs & What Changed',
+      title: 'Accuracy improved but confidence intervals were still wide in peak periods',
+      body: `The forecast accuracy improvement was real, but it was more stable in steady-state periods than during Q4 and Q1 when deal flow was concentrated. We added a confidence band to the forecast dashboard to make uncertainty visible during those periods rather than presenting a single number that was likely to miss. This actually improved trust in the forecast among leadership because it was honest about what we didn't know.`
+    },
+    {
+      label: 'Outcome',
+      title: '+11.2% forecast accuracy improvement. 15+ hours saved weekly.',
+      body: `Forecast accuracy improved 11.2 percentage points from baseline. Turnaround time on forecast reviews improved 21.7%. Data accuracy across the pipeline improved 8.1%. Delivered these results in the first 8 months and was promoted from Analyst to Analyst II. Recognised with the Data Literacy Award 2023.`
+    }
+  ],
+  dash: {
+    title: 'Pipeline Forecast Dashboard · Cleo Software',
+    kpis: [{val:'96.2%',lbl:'Forecast Accuracy',cls:'t'},{val:'$5.2M',lbl:'Pipeline (current)',cls:'a'},{val:'-3.8%',lbl:'Variance this quarter',cls:''},{val:'+11.2%',lbl:'Accuracy vs baseline',cls:''}],
+    svg: `<svg viewBox="0 0 680 160" width="100%" fill="none">
+      <defs><linearGradient id="d2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".22"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></linearGradient></defs>
+      <line x1="52" y1="16" x2="52" y2="132" stroke="rgba(255,255,255,.05)"/>
+      <line x1="52" y1="132" x2="672" y2="132" stroke="rgba(255,255,255,.05)"/>
+      <line x1="52" y1="96" x2="672" y2="96" stroke="rgba(255,255,255,.04)" stroke-dasharray="4,4"/>
+      <line x1="52" y1="60" x2="672" y2="60" stroke="rgba(255,255,255,.04)" stroke-dasharray="4,4"/>
+      <text x="46" y="136" fill="rgba(255,255,255,.18)" font-size="8.5" text-anchor="end" font-family="monospace">$0</text>
+      <text x="46" y="100" fill="rgba(255,255,255,.18)" font-size="8.5" text-anchor="end" font-family="monospace">$2M</text>
+      <text x="46" y="64" fill="rgba(255,255,255,.18)" font-size="8.5" text-anchor="end" font-family="monospace">$4M</text>
+      <text x="46" y="28" fill="rgba(255,255,255,.18)" font-size="8.5" text-anchor="end" font-family="monospace">$5M+</text>
+      <polyline points="66,120 176,106 286,92 396,76 506,62 616,46 654,40" stroke="rgba(255,255,255,.2)" stroke-width="1.6" fill="none" stroke-dasharray="6,5" stroke-linecap="round"/>
+      <path d="M66,124 L176,110 L286,96 L396,80 L506,66 L616,50 L654,44 L654,132 L66,132Z" fill="url(#d2)"/>
+      <polyline points="66,124 176,110 286,96 396,80 506,66 616,50 654,44" stroke="#f59e0b" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <circle cx="654" cy="44" r="3.5" fill="#f59e0b"/>
+      <rect x="58" y="10" width="9" height="5" fill="rgba(255,255,255,.2)" rx="1"/>
+      <text x="71" y="16" fill="rgba(255,255,255,.25)" font-size="7.5" font-family="monospace">Forecast</text>
+      <rect x="122" y="10" width="9" height="5" fill="#f59e0b" rx="1"/>
+      <text x="135" y="16" fill="rgba(255,255,255,.25)" font-size="7.5" font-family="monospace">Actual</text>
+      <text x="66" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Q1</text>
+      <text x="176" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Q2</text>
+      <text x="286" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Q3</text>
+      <text x="396" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Q4</text>
+      <text x="506" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Q5</text>
+      <text x="616" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Q6</text>
+    </svg>`
+  }
+},
+
+yoptima: {
+  co: 'YOptima · Growth Operations · Nov 2021 – Mar 2022',
+  title: 'Campaign Attribution & Spend Reallocation',
+  bg: 'linear-gradient(140deg,#1a0a30,#380f52,#2a1048)',
+  kpis: [
+    {val:'+19.3%', lbl:'Campaign ROI', cls:'a'},
+    {val:'50+', lbl:'Campaigns modelled', cls:''},
+    {val:'3', lbl:'Spend reallocations', cls:'t'},
+    {val:'Last-touch', lbl:'Model replaced', cls:''},
+  ],
+  sections: [
+    {
+      label: 'Context',
+      title: '50+ campaigns running, no attribution model',
+      body: `YOptima was running 50+ digital campaigns simultaneously across paid search, social, display, email, and referral. The marketing team was making budget decisions based on last-touch attribution — whichever channel appeared to convert the customer last got the credit and the budget. The team suspected this wasn't accurate but had no alternative model to work from.`
+    },
+    {
+      label: 'Problem',
+      title: 'Last-touch attribution was rewarding visibility, not conversion',
+      body: `Last-touch attribution reliably over-credits the final interaction — usually retargeting or branded search — and under-credits the earlier touchpoints that actually drove awareness and consideration. The result is predictable: budget concentrates in channels that look like they convert, while the channels doing the upstream work get starved. This creates a ceiling on ROI improvement because you're optimising the wrong variable.`
+    },
+    {
+      label: 'Constraint',
+      title: 'Incomplete journey data and short engagement window',
+      body: `The main data constraint was incomplete journey tracking. Some campaigns had full multi-touch data going back to first click. Others, particularly older display campaigns, only had last-touch records. This meant the attribution model had to work with inconsistent path depth across campaigns.`,
+      note: `The engagement window was also short — 4 months. Enough to build and validate a model, but not long enough to run a proper controlled spend experiment. The reallocation recommendations were based on model output, not A/B tested spend shifts.`
+    },
+    {
+      label: 'Approach',
+      title: 'Linear multi-touch model with channel contribution weighting',
+      body: `Built a linear multi-touch attribution model that divided conversion credit equally across all recorded touchpoints in a customer journey. For campaigns where journey data was incomplete, built a weighted fallback using channel-level conversion rate patterns. Ran the model across all 50+ campaigns and built a channel contribution matrix showing which channels were initiating journeys, which were influencing mid-funnel, and which were closing.`
+    },
+    {
+      label: 'Implementation',
+      title: 'Channel contribution matrix used in weekly planning reviews',
+      body: `Output was a channel contribution matrix presented in weekly planning meetings. The matrix showed, for each channel: conversion contribution under last-touch vs. multi-touch, journey initiation rate, mid-funnel touch rate, and relative ROI under each model. Based on this, three spend reallocation recommendations were made — moving budget from over-credited retargeting into two under-credited mid-funnel channels.`
+    },
+    {
+      label: 'Tradeoffs & What Changed',
+      title: 'Model limitations were real and disclosed',
+      body: `Linear multi-touch isn't the most sophisticated attribution approach — it assumes equal credit across all touches, which may not reflect actual influence. Position-based or data-driven models would be more accurate with more data. These limitations were disclosed in the recommendations. The ROI improvement of 19.3% was measured 8 weeks post-reallocation, and while directionally clear, can't be fully isolated from other variables in that period.`
+    },
+    {
+      label: 'Outcome',
+      title: '+19.3% ROI improvement 8 weeks post-reallocation',
+      body: `Campaign ROI improved 19.3% in the 8 weeks following spend reallocation. Three previously under-resourced channels received increased budget based on their multi-touch contribution scores. The attribution model became the standard methodology for campaign planning reviews going forward.`
+    }
+  ],
+  dash: {
+    title: 'Attribution Dashboard · YOptima',
+    kpis: [{val:'+19.3%',lbl:'Portfolio ROI lift',cls:'a'},{val:'8',lbl:'Channels ranked',cls:''},{val:'3',lbl:'Reallocations made',cls:'t'},{val:'50+',lbl:'Campaigns modelled',cls:''}],
+    svg: `<svg viewBox="0 0 680 160" width="100%" fill="none">
+      <line x1="52" y1="16" x2="52" y2="132" stroke="rgba(255,255,255,.05)"/>
+      <line x1="52" y1="132" x2="672" y2="132" stroke="rgba(255,255,255,.05)"/>
+      <text x="46" y="136" fill="rgba(255,255,255,.16)" font-size="8.5" text-anchor="end" font-family="monospace">0%</text>
+      <text x="46" y="96" fill="rgba(255,255,255,.16)" font-size="8.5" text-anchor="end" font-family="monospace">10%</text>
+      <text x="46" y="56" fill="rgba(255,255,255,.16)" font-size="8.5" text-anchor="end" font-family="monospace">20%</text>
+      <rect x="68" y="66" width="17" height="66" fill="rgba(255,255,255,.08)" rx="1"/>
+      <rect x="154" y="78" width="17" height="54" fill="rgba(255,255,255,.08)" rx="1"/>
+      <rect x="240" y="86" width="17" height="46" fill="rgba(255,255,255,.08)" rx="1"/>
+      <rect x="326" y="98" width="17" height="34" fill="rgba(255,255,255,.08)" rx="1"/>
+      <rect x="412" y="92" width="17" height="40" fill="rgba(255,255,255,.08)" rx="1"/>
+      <rect x="498" y="108" width="17" height="24" fill="rgba(255,255,255,.08)" rx="1"/>
+      <rect x="88" y="48" width="17" height="84" fill="#a78bfa" rx="1" opacity=".72"/>
+      <rect x="174" y="56" width="17" height="76" fill="#a78bfa" rx="1" opacity=".72"/>
+      <rect x="260" y="68" width="17" height="64" fill="#a78bfa" rx="1" opacity=".72"/>
+      <rect x="346" y="64" width="17" height="68" fill="#a78bfa" rx="1" opacity=".72"/>
+      <rect x="432" y="76" width="17" height="56" fill="#a78bfa" rx="1" opacity=".72"/>
+      <rect x="518" y="88" width="17" height="44" fill="#a78bfa" rx="1" opacity=".72"/>
+      <text x="86" y="148" fill="rgba(255,255,255,.16)" font-size="7" text-anchor="middle" font-family="monospace">Paid Search</text>
+      <text x="172" y="148" fill="rgba(255,255,255,.16)" font-size="7" text-anchor="middle" font-family="monospace">Social</text>
+      <text x="258" y="148" fill="rgba(255,255,255,.16)" font-size="7" text-anchor="middle" font-family="monospace">Email</text>
+      <text x="344" y="148" fill="rgba(255,255,255,.16)" font-size="7" text-anchor="middle" font-family="monospace">Display</text>
+      <text x="430" y="148" fill="rgba(255,255,255,.16)" font-size="7" text-anchor="middle" font-family="monospace">Organic</text>
+      <text x="516" y="148" fill="rgba(255,255,255,.16)" font-size="7" text-anchor="middle" font-family="monospace">Referral</text>
+      <rect x="56" y="10" width="9" height="5" fill="rgba(255,255,255,.12)" rx="1"/>
+      <text x="69" y="16" fill="rgba(255,255,255,.22)" font-size="7.5" font-family="monospace">Last-touch</text>
+      <rect x="132" y="10" width="9" height="5" fill="#a78bfa" rx="1" opacity=".72"/>
+      <text x="145" y="16" fill="rgba(255,255,255,.22)" font-size="7.5" font-family="monospace">Multi-touch (model)</text>
+    </svg>`
+  }
+},
+
+whj: {
+  co: 'WhiteHat Jr · Assistant Manager, User Insights · Nov 2020 – Nov 2021',
+  title: 'Interaction Analysis & CSAT Improvement',
+  bg: 'linear-gradient(140deg,#0d2218,#0f3828,#0a4820)',
+  kpis: [
+    {val:'+12.8%', lbl:'CSAT improvement · 12 months', cls:'t'},
+    {val:'10,000+', lbl:'Interactions tagged', cls:''},
+    {val:'3', lbl:'Root-cause categories', cls:''},
+    {val:'🏆', lbl:'Employee of the Year 2021', cls:'a'},
+  ],
+  sections: [
+    {
+      label: 'Context',
+      title: 'Rapid scale, no insight infrastructure',
+      body: `WhiteHat Jr had grown quickly, and the customer interaction volume had scaled with it. The user insights team was logging 10,000+ interactions per month — support queries, session feedback, educator reviews, parent complaints — but there was no systematic analysis of what these interactions were saying. Leadership knew CSAT was lower than they wanted but had no structured view of why.`
+    },
+    {
+      label: 'Problem',
+      title: 'CSAT was a number without a cause model',
+      body: `The team had a monthly CSAT score. What they didn't have was any breakdown of which types of interactions were driving that score down, or which categories of issues were recurring at volume. Without that, there was no way to tell product or operations which specific problems to fix first. Every team had a theory about what was causing low CSAT. None of them were validated.`
+    },
+    {
+      label: 'Constraint',
+      title: 'Manual categorisation at scale, with a small team',
+      body: `The interaction data was mostly unstructured — free text notes, phone call summaries, session feedback forms. There was no existing taxonomy, no tagging system, and no budget for tooling. The categorisation had to be done manually by a team of 5 Relationship Managers, which meant we needed a taxonomy simple enough to be applied consistently across a large volume of interactions by people with varying levels of analytical experience.`,
+      note: `Inter-rater reliability was an early concern. The first version of the taxonomy had 14 categories. After a calibration exercise, we collapsed it to 8 — precision was lower but consistency was much higher, which mattered more for the analysis.`
+    },
+    {
+      label: 'Approach',
+      title: 'Built a sentiment taxonomy, trained the team, and ran the analysis',
+      body: `Designed an 8-category interaction taxonomy: product friction, educator quality, scheduling and rescheduling issues, communication delays, outcome dissatisfaction, billing and payments, technical issues, and positive feedback. Ran a team calibration session where we scored 100 interactions together to align on edge cases. Then ran the full categorisation across 3 months of historic interactions before moving to ongoing tagging.`
+    },
+    {
+      label: 'Implementation',
+      title: 'Weekly tagging cadence, monthly insight report to product',
+      body: `Team leads assigned weekly interaction batches for tagging. I ran a weekly QA check on 10% of tagged interactions to maintain accuracy. Built a monthly analysis report that showed CSAT driver distribution, volume trends by category, and correlation with overall score. This report went directly to the product team as a structured brief, not just a summary. Two product changes were made directly as a result of findings from the first report.`
+    },
+    {
+      label: 'Tradeoffs & What Changed',
+      title: 'Taxonomy collapsed from 14 to 8 categories after calibration issues',
+      body: `The first taxonomy version was too granular. Tagging consistency fell below 70% on several categories because the distinctions were too subtle for reliable human judgement at speed. Collapsing to 8 categories improved consistency to 88%. We lost some precision on sub-issues within categories but gained a dataset that was actually reliable enough to act on. The tradeoff was right.`
+    },
+    {
+      label: 'Outcome',
+      title: 'CSAT improved 12.8% over 12 months. Two direct product changes.',
+      body: `CSAT improved 12.8% over the 12 months following the introduction of the insight system. Three categories were found to be responsible for over 70% of negative sentiment, giving product and operations a clear prioritisation framework. Two product changes were directly attributed to interaction intelligence findings. Recognised as Employee of the Year 2021.`
+    }
+  ],
+  dash: {
+    title: 'CSAT Driver Analysis · WhiteHat Jr',
+    kpis: [{val:'74.8%',lbl:'CSAT (end of period)',cls:'t'},{val:'+12.8%',lbl:'vs. 62% baseline',cls:'a'},{val:'3 of 8',lbl:'Categories = 70% of misses',cls:''},{val:'12 mos',lbl:'Measurement period',cls:''}],
+    svg: `<svg viewBox="0 0 680 160" width="100%" fill="none">
+      <defs><linearGradient id="d3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4ade80" stop-opacity=".28"/><stop offset="100%" stop-color="#4ade80" stop-opacity="0"/></linearGradient></defs>
+      <line x1="52" y1="16" x2="52" y2="132" stroke="rgba(255,255,255,.05)"/>
+      <line x1="52" y1="132" x2="672" y2="132" stroke="rgba(255,255,255,.05)"/>
+      <line x1="52" y1="96" x2="672" y2="96" stroke="rgba(255,255,255,.04)" stroke-dasharray="4,4"/>
+      <line x1="52" y1="60" x2="672" y2="60" stroke="rgba(255,255,255,.04)" stroke-dasharray="4,4"/>
+      <text x="46" y="136" fill="rgba(255,255,255,.16)" font-size="8.5" text-anchor="end" font-family="monospace">60%</text>
+      <text x="46" y="100" fill="rgba(255,255,255,.16)" font-size="8.5" text-anchor="end" font-family="monospace">65%</text>
+      <text x="46" y="64" fill="rgba(255,255,255,.16)" font-size="8.5" text-anchor="end" font-family="monospace">70%</text>
+      <text x="46" y="28" fill="rgba(255,255,255,.16)" font-size="8.5" text-anchor="end" font-family="monospace">75%</text>
+      <path d="M66,122 L176,116 L286,106 L396,94 L506,80 L616,64 L654,56 L654,132 L66,132Z" fill="url(#d3)"/>
+      <polyline points="66,122 176,116 286,106 396,94 506,80 616,64 654,56" stroke="#4ade80" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <circle cx="66" cy="122" r="3" fill="#4ade80" opacity=".7"/>
+      <circle cx="654" cy="56" r="4" fill="#4ade80"/>
+      <line x1="654" y1="56" x2="654" y2="18" stroke="#4ade80" stroke-width="1" stroke-dasharray="3,3" opacity=".45"/>
+      <text x="658" y="52" fill="#4ade80" font-size="9" font-family="monospace">74.8%</text>
+      <text x="66" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Nov</text>
+      <text x="176" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Jan</text>
+      <text x="286" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Mar</text>
+      <text x="396" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">May</text>
+      <text x="506" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Jul</text>
+      <text x="616" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Sep</text>
+      <text x="654" y="148" fill="rgba(255,255,255,.16)" font-size="7.5" text-anchor="middle" font-family="monospace">Nov</text>
+    </svg>`
+  }
+},
+
+decathlon: {
+  co: 'Decathlon Sports India · Sports Leader, part-time · Jul 2018 – Oct 2020',
+  title: 'Local Sports Project Optimisation',
+  bg: 'linear-gradient(140deg,#2a0e06,#4a1a08,#3a2008)',
+  kpis: [
+    {val:'+26.8%', lbl:'Revenue in 3 months', cls:'a'},
+    {val:'4 areas', lbl:'Product-mix redesigned', cls:''},
+    {val:'Regional', lbl:'Demand model built', cls:'t'},
+    {val:'3 mos', lbl:'Time to result', cls:''},
+  ],
+  sections: [
+    {
+      label: 'Context',
+      title: 'Flat revenue despite consistent footfall',
+      body: `Decathlon's Local Sports Project was designed to drive revenue from community sports participation — matching local product availability to what people in the area actually played. The product mix was standardised across store areas, set by national category managers. Revenue had plateaued despite consistent customer traffic, and store-level teams had no data model to understand why.`
+    },
+    {
+      label: 'Problem',
+      title: 'The catalogue didn\'t reflect local demand',
+      body: `Sports participation varies significantly by area — what sells in one neighbourhood may sit on shelves in another. The standardised product mix was built for a national average that didn't exist in practice. No one had measured regional demand patterns at a granular level. The team suspected product-mix mismatch was the issue but had no data to confirm or quantify it.`
+    },
+    {
+      label: 'Constraint',
+      title: 'Limited data access and no existing demand model',
+      body: `Data access was a real constraint. I had access to store-level purchase data but not to granular demographic or sports participation data at the postcode level. The demand analysis had to be inferred from what people were buying versus what was available — revealed preference, not stated preference. The model had limits because of this.`,
+      note: `Also working part-time, 15-20 hours per week, alongside studies. The analysis had to be scoped to what was feasible in that context.`
+    },
+    {
+      label: 'Approach',
+      title: 'Purchase pattern analysis by area to identify demand-mix gaps',
+      body: `Pulled purchase data disaggregated by store area and product category. Compared purchase rates against stock availability to identify categories where demand was measurably higher than supply, and categories where stock was high but purchase rates were low. Segmented by demographic proxy (inferred from area-level purchasing patterns for adult vs youth, team sports vs individual sports) to see if demand patterns differed by customer segment within areas.`
+    },
+    {
+      label: 'Implementation',
+      title: 'Specific reallocation recommendations for 4 area categories',
+      body: `Translated the demand analysis into concrete product-mix recommendations for 4 area types, with specific SKU categories to increase and decrease per area. Worked with store managers to implement the reallocation over a 3-week period. Tracked revenue by area category for 3 months post-reallocation. Also recommended display priority changes to align high-demand categories with traffic flow patterns, which was implemented within the same period.`
+    },
+    {
+      label: 'Tradeoffs & What Changed',
+      title: 'Demand model was inferred, not direct',
+      body: `The core limitation was that I was inferring demand from purchase behaviour rather than measuring it directly. High purchase rate could mean high demand, or it could mean those products were simply better stocked. The analysis tried to control for this by comparing purchase-to-availability ratios, but the model wasn't perfect. A more rigorous version would include customer surveys or external participation data.`
+    },
+    {
+      label: 'Outcome',
+      title: '+26.8% revenue within 3 months of implementation',
+      body: `Revenue increased 26.8% across the 4 area categories within 3 months of the product-mix reallocation. The demand analysis methodology was used as a template for subsequent regional planning reviews.`
+    }
+  ],
+  dash: {
+    title: 'Revenue by Area · Decathlon Local Sports Project',
+    kpis: [{val:'+26.8%',lbl:'3-month revenue lift',cls:'a'},{val:'4',lbl:'Areas redesigned',cls:''},{val:'3 wks',lbl:'Rollout time',cls:'t'},{val:'3 mos',lbl:'Measurement window',cls:''}],
+    svg: `<svg viewBox="0 0 680 160" width="100%" fill="none">
+      <line x1="52" y1="16" x2="52" y2="132" stroke="rgba(255,255,255,.05)"/>
+      <line x1="52" y1="132" x2="672" y2="132" stroke="rgba(255,255,255,.05)"/>
+      <text x="46" y="136" fill="rgba(255,255,255,.16)" font-size="8.5" text-anchor="end" font-family="monospace">0</text>
+      <text x="46" y="96" fill="rgba(255,255,255,.16)" font-size="8.5" text-anchor="end" font-family="monospace">+10%</text>
+      <text x="46" y="56" fill="rgba(255,255,255,.16)" font-size="8.5" text-anchor="end" font-family="monospace">+20%</text>
+      <text x="46" y="20" fill="rgba(255,255,255,.16)" font-size="8.5" text-anchor="end" font-family="monospace">+30%</text>
+      <rect x="76" y="98" width="26" height="34" fill="rgba(255,255,255,.07)" rx="1"/>
+      <rect x="204" y="102" width="26" height="30" fill="rgba(255,255,255,.07)" rx="1"/>
+      <rect x="332" y="94" width="26" height="38" fill="rgba(255,255,255,.07)" rx="1"/>
+      <rect x="460" y="98" width="26" height="34" fill="rgba(255,255,255,.07)" rx="1"/>
+      <rect x="106" y="48" width="26" height="84" fill="#fb923c" rx="1" opacity=".75"/>
+      <rect x="234" y="56" width="26" height="76" fill="#fb923c" rx="1" opacity=".75"/>
+      <rect x="362" y="44" width="26" height="88" fill="#fb923c" rx="1" opacity=".8"/>
+      <rect x="490" y="52" width="26" height="80" fill="#fb923c" rx="1" opacity=".75"/>
+      <text x="102" y="148" fill="rgba(255,255,255,.16)" font-size="8" text-anchor="middle" font-family="monospace">Area A</text>
+      <text x="230" y="148" fill="rgba(255,255,255,.16)" font-size="8" text-anchor="middle" font-family="monospace">Area B</text>
+      <text x="358" y="148" fill="rgba(255,255,255,.16)" font-size="8" text-anchor="middle" font-family="monospace">Area C</text>
+      <text x="486" y="148" fill="rgba(255,255,255,.16)" font-size="8" text-anchor="middle" font-family="monospace">Area D</text>
+      <rect x="56" y="10" width="9" height="5" fill="rgba(255,255,255,.1)" rx="1"/>
+      <text x="69" y="16" fill="rgba(255,255,255,.2)" font-size="7.5" font-family="monospace">Before</text>
+      <rect x="112" y="10" width="9" height="5" fill="#fb923c" rx="1" opacity=".75"/>
+      <text x="125" y="16" fill="rgba(255,255,255,.2)" font-size="7.5" font-family="monospace">After reallocation</text>
+    </svg>`
+  }
+}
+
+,
+
+ai_capacity: {
+  co: 'MPOWER Financing · Operations Analyst · 2025',
+  title: 'AI Capacity Planning Tool',
+  bg: 'linear-gradient(140deg,#0e0e0e,#191919,#0a0a0a)',
+  kpis: [
+    {val:'45 min → 0', lbl:'Daily manual process removed', cls:'t'},
+    {val:'3 years', lbl:'Training data used', cls:''},
+    {val:'On-demand', lbl:'Recommendations available', cls:'a'},
+    {val:'First', lbl:'AI tooling at MPOWER', cls:''},
+  ],
+  sections: [
+    {
+      label: 'Context',
+      title: 'Staffing decisions made on a 45-minute morning ritual',
+      body: `Every morning, team leads at MPOWER spent around 45 minutes pulling together queue volumes, SLA adherence data, staffing availability, and backlog figures from multiple sources — Salesforce, internal dashboards, a shared spreadsheet — before they could make a headcount recommendation for the day. The data existed, but assembling it was fully manual. On days when the data was stale or someone was out, the process broke down.`
+    },
+    {
+      label: 'Problem',
+      title: 'Decision latency, not data absence',
+      body: `The underlying problem wasn't that the team lacked data — it was that consolidating it took long enough that staffing decisions were sometimes made before the picture was complete, or pushed to later in the day when queue pressure had already built. A 45-minute process also meant the answer was only available once a day, at a fixed time. If conditions changed mid-day, there was no lightweight way to re-run the estimate.`
+    },
+    {
+      label: 'Constraint',
+      title: 'No engineering resource, had to be built within existing tools',
+      body: `There was no engineering support available for this. The tool had to be built using what was accessible — the Claude API, existing data exports, and internal documentation. It also couldn't require team leads to change their core workflow significantly. The output had to feel like a recommendation they could act on immediately, not a dashboard they had to interpret.`,
+      note: `Data quality was also a constraint. Historical staffing data had some gaps and inconsistencies that needed cleaning before it could be used reliably for context.`
+    },
+    {
+      label: 'Approach',
+      title: 'Prompt-based tool trained on historical operational context',
+      body: `Built a Claude-powered tool that took daily operational inputs — queue volume, SLA rate, scheduled headcount, backlog size — and returned a headcount recommendation with a short rationale. The model's context was grounded in 3 years of historical staffing patterns, SLA adherence data, and queue behaviour by day of week and month. Rather than a predictive model, it functioned as a well-informed reasoning layer: given today's inputs and what we know from the past, here's what makes sense.`
+    },
+    {
+      label: 'Implementation',
+      title: 'Team leads query it directly via a simple input form',
+      body: `Built a lightweight interface where team leads enter 4 inputs — current queue volume, SLA rate, available headcount, and backlog — and receive a structured recommendation within seconds. The tool explains its reasoning briefly, so leads can sanity-check it rather than just accepting the output. It runs off a daily data pull that takes about 2 minutes to prepare, compared to the previous 45-minute process. Available any time of day, not just in the morning.`
+    },
+    {
+      label: 'Tradeoffs & What Changed',
+      title: 'It assists judgement, it doesn\'t replace it',
+      body: `The tool was deliberately designed to recommend, not decide. Team leads retained final call on headcount allocation, and there were early cases where they overrode the recommendation correctly — the model couldn't account for context it didn't have, like a known spike coming from a specific cohort. Over time, the overrides helped identify what context the tool was missing. The tool improved as those edge cases were documented and added to the prompt context.`
+    },
+    {
+      label: 'Outcome',
+      title: '45-minute daily process replaced. Available on-demand.',
+      body: `The daily manual consolidation process was eliminated. Team leads now spend around 2 minutes preparing inputs and receive a recommendation instantly. The tool is available throughout the day, which means staffing can be re-evaluated at midday if queue conditions shift — something that wasn't possible before. First operational AI tool built and deployed at MPOWER.`
+    }
+  ],
+  dash: {
+    title: 'Capacity Planning Tool · MPOWER Financing',
+    kpis: [
+      {val:'~2 min', lbl:'Input prep time', cls:'t'},
+      {val:'Instant', lbl:'Recommendation returned', cls:'a'},
+      {val:'Any time', lbl:'Available on-demand', cls:''},
+      {val:'3 yrs', lbl:'Historical context window', cls:''},
+    ],
+    svg: `<svg viewBox="0 0 680 160" width="100%" fill="none">
+      <rect x="56" y="24" width="180" height="100" rx="5" stroke="rgba(255,255,255,.08)" stroke-width="1" fill="rgba(255,255,255,.02)"/>
+      <text x="72" y="48" fill="rgba(255,255,255,.35)" font-size="8" font-family="monospace">INPUTS</text>
+      <text x="72" y="68" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="monospace">Queue: 142 accounts</text>
+      <text x="72" y="82" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="monospace">SLA: 91%</text>
+      <text x="72" y="96" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="monospace">Headcount: 18 avail</text>
+      <text x="72" y="110" fill="rgba(255,255,255,.5)" font-size="8.5" font-family="monospace">Backlog: 34</text>
+      <line x1="240" y1="74" x2="274" y2="74" stroke="rgba(255,255,255,.12)" stroke-width="1.5" stroke-linecap="round"/>
+      <polygon points="274,70 282,74 274,78" fill="rgba(255,255,255,.12)"/>
+      <rect x="286" y="24" width="200" height="100" rx="5" stroke="rgba(255,255,255,.08)" stroke-width="1" fill="rgba(255,255,255,.02)"/>
+      <text x="302" y="48" fill="rgba(255,255,255,.35)" font-size="8" font-family="monospace">RECOMMENDATION</text>
+      <text x="302" y="68" fill="#2dd4bf" font-size="8.5" font-family="monospace">+2 agents to Tier-1</text>
+      <text x="302" y="82" fill="rgba(255,255,255,.4)" font-size="7.5" font-family="monospace">queue above Tue avg</text>
+      <text x="302" y="96" fill="rgba(255,255,255,.4)" font-size="7.5" font-family="monospace">SLA risk if unchanged</text>
+      <text x="302" y="110" fill="rgba(255,255,255,.25)" font-size="7" font-family="monospace">Based on 847 similar days</text>
+      <rect x="510" y="38" width="148" height="72" rx="5" stroke="rgba(255,255,255,.05)" stroke-width="1" fill="rgba(255,255,255,.015)"/>
+      <text x="526" y="58" fill="rgba(255,255,255,.25)" font-size="7.5" font-family="monospace">Historical context</text>
+      <text x="526" y="74" fill="rgba(255,255,255,.18)" font-size="7" font-family="monospace">3 yrs SLA patterns</text>
+      <text x="526" y="87" fill="rgba(255,255,255,.18)" font-size="7" font-family="monospace">Queue seasonality</text>
+      <text x="526" y="100" fill="rgba(255,255,255,.18)" font-size="7" font-family="monospace">Staffing outcomes</text>
+      <line x1="490" y1="74" x2="510" y2="74" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="3,3"/>
+    </svg>`
+  }
+}
+
+};
+
+function openModal(id) {
+  const c = cases[id];
+  if (!c) return;
+  const kpiHtml = c.kpis.map(k =>
+    `<div class="mk"><strong class="${k.cls}">${k.val}</strong><span>${k.lbl}</span></div>`
+  ).join('');
+  const secHtml = c.sections.map(s => `
+    <div class="ms">
+      <div class="ms-label">${s.label}</div>
+      <h4>${s.title}</h4>
+      <p>${s.body}</p>
+      ${s.note ? `<div class="ms-note"><strong>Note:</strong> ${s.note}</div>` : ''}
+    </div>`
+  ).join('');
+  const kpiBarHtml = c.dash.kpis.map(k =>
+    `<div class="md-kpi"><span class="md-kv ${k.cls}">${k.val}</span><span class="md-kl">${k.lbl}</span></div>`
+  ).join('');
+  document.getElementById('modal-content').innerHTML = `
+    <div class="modal-cover" style="background:${c.bg}">
+      <div class="modal-cover-inner">
+        <div class="modal-co">${c.co}</div>
+        <div class="modal-title">${c.title}</div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-kpis">${kpiHtml}</div>
+      <div class="modal-sections">${secHtml}</div>
+      <div class="modal-dash">
+        <div class="md-bar">
+          <span class="md-title">${c.dash.title}</span>
+          <span class="md-note">Anonymised · Illustrative</span>
+        </div>
+        <div class="md-kpis">${kpiBarHtml}</div>
+        <div class="md-chart">${c.dash.svg}</div>
+      </div>
+    </div>`;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('overlay')) closeModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
